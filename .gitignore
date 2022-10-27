@@ -1,0 +1,5 @@
+down
+newenv
+venv
+__pycache__
+.idea
