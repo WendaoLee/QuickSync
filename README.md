@@ -3,11 +3,13 @@
 
 ## Preliminaries
 
+Please ensure you have installed `Python >= 3.5`.
+
 The script use WebDav3Client for transmitting data.So you need use
 
 `$ pip install webdavclient3` 
 
-to ensure it can be used in your env.
+to ensure it can be used in your environment.
 
 ## Usage
 
