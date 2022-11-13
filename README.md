@@ -47,7 +47,7 @@ python target_folder/QuickSync.py -f folder_path
 
 ## Usage
 
-```bash
+```
 usage: QuickSync [-h] [-f F] {sync,config,update,get} ...
 
 This is a quick sync program for webdav. You can use this script to sync your file from a webdav server.

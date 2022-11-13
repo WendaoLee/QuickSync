@@ -260,9 +260,8 @@ def get_files(args):
 parser = argparse.ArgumentParser(prog='QuickSync',
                                  description="This is a quick sync program for webdav.\n You can use this script to sync your file from a webdav server.")
 parser.add_argument('-f',
-                    help="-f is the abbreviation of 'folder_path'.You enter the local folder's path here."
+                    help="-f is the abbreviation of 'folder_path'.You enter the local folder's path here.And it is a convenient usage of 'sync -f'.With it you start you sync process with your server."
                          "\n For instance,'-f ./SyncFolder' with relative path or '/home/usr/SyncFolder' in Linux and 'C:\\Windows\\SyncFolder' in Windows with absolute path."
-                         "\nAnd this is a convenient usage of 'sync -f'.With it you start you sync process with your server."
                          "\nIf you have finished config and use 'update' command for your folder,you can just enter the folder's path then start sync your file easily."
                          "\nIf not,it will throw message info to push you enter the config.")
 subparser = parser.add_subparsers()
@@ -315,10 +314,14 @@ update_parser.add_argument('--folder_name',
 update_parser.set_defaults(func=update_folder_json)
 
 # QuickSync get
+get_help_string = """
+'get' is a subcommand for you to download files from a webdav server if you are in a new machine.
+If you don't use this script to sync your files before,it will ask you to confirm your downloading.
+"""
 get_parser = subparser.add_parser('get')
 get_parser.add_argument('-t',
                         type=str,
-                        help="The folder's name in remote server.Just a name without sep.For instance,'-f folder_name'")
+                        help="This is the abbreviation of '-target'.You should enter the folder's name in remote server here.Just a name without any sep.For instance,'-f folder_name'")
 get_parser.add_argument('-f',
                         type=str,
                         help="The local saved folder's path.")
