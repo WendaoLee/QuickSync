@@ -57,6 +57,14 @@ def update_folder_json(args):
                 thePackConfig['password'] = args.password
             if args.folder_name:
                 thePackConfig['FolderName'] = args.folder_name
+            if args.globals:
+                with open(file=os.path.dirname(os.path.realpath(__file__)) + os.sep + 'config.json',
+                  mode="r+", encoding="utf-8") as g:
+
+                  theLocalConfig = json.load(g)
+                  thePackConfig['server'] = theLocalConfig['server']
+                  thePackConfig['account'] = theLocalConfig['account']
+                  thePackConfig['password'] = theLocalConfig['password']
             f.seek(0)
             f.truncate()
             f.write(json.dumps(thePackConfig))
@@ -311,6 +319,9 @@ update_parser.add_argument('--password',
 update_parser.add_argument('--folder_name',
                            type=str,
                            help="If this parameter entered,it will be the folder's name you see in your webdav server")
+update_parser.add_argument('--globals',
+                           type=str,
+                           help="If you want to update with the global config,use it with any para pass.")
 update_parser.set_defaults(func=update_folder_json)
 
 # QuickSync get

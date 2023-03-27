@@ -45,6 +45,8 @@ python target_folder/QuickSync.py -f folder_path
 
 **Notice**,if you use relative path,make sure you use`./path`,not the `/path`,especially in Linux.
 
+**Mention**: `QuickSync update` will not use the global config automatically.So if you want to update with the global config,please add parameter `--globals any_args`.
+
 ## Usage
 
 ```
