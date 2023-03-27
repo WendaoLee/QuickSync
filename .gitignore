@@ -3,3 +3,5 @@ newenv
 venv
 __pycache__
 .idea
+./config.json
+./tmp.json
